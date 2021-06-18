@@ -2,11 +2,14 @@ package com.novikova.diexamples.presentation.feature.presenter
 
 import com.novikova.diexamples.presentation.feature.reducer.IExampleReducer
 import com.novikova.diexamples.presentation.feature.view.ExampleView
+import dagger.hilt.android.scopes.FragmentScoped
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
+import javax.inject.Inject
 
-class ExamplePresenter constructor(
+@FragmentScoped
+class ExamplePresenter @Inject constructor(
     private val reducer: IExampleReducer
 ){
 

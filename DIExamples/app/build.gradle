@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
+
 
 android {
     compileSdkVersion 30
@@ -46,6 +49,10 @@ dependencies {
 
     // RxBindings
     implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxbindings_version"
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:2.28-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
