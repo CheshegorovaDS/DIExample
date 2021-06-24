@@ -10,7 +10,6 @@ import dagger.hilt.android.components.FragmentComponent
 @Module
 @InstallIn(FragmentComponent::class)
 abstract class ExampleModule {
-
     @Binds
     abstract fun bindReducer(reducer: ExampleReducer): IExampleReducer
 }

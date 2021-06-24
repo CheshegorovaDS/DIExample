@@ -12,6 +12,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
+//Если хотите использовать Hilt в фрагментах,
+// то Activity которая содержит эти фрагменты
+// обязательно помечать аннотацией @AndroidEntryPoint
 @AndroidEntryPoint
 class ExampleFragment: Fragment(), ExampleView {
     private val resLayout = R.layout.fragment_example

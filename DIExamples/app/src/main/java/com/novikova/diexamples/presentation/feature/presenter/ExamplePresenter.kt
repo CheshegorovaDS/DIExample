@@ -12,7 +12,6 @@ import javax.inject.Inject
 class ExamplePresenter @Inject constructor(
     private val reducer: IExampleReducer
 ){
-
     private var view: ExampleView? = null
 
     private val dispose = CompositeDisposable()
