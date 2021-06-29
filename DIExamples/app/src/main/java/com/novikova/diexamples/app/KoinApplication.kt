@@ -21,7 +21,7 @@ class KoinApplication: Application() {
         }
     }
 
-    val featureModule = module {
+    private val featureModule = module {
         factory { ExamplePresenter(get()) }
         factory<IExampleReducer> { ExampleReducer() }
     }
