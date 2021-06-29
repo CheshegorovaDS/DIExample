@@ -9,11 +9,12 @@ import androidx.fragment.app.Fragment
 import com.novikova.diexamples.R
 import com.novikova.diexamples.presentation.feature.presenter.ExamplePresenter
 import io.reactivex.subjects.PublishSubject
+import org.koin.android.ext.android.inject
 
 class ExampleFragment: Fragment(), ExampleView {
     private val resLayout = R.layout.fragment_example
 
-    lateinit var presenter: ExamplePresenter
+//    val presenter: ExamplePresenter by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,15 +25,14 @@ class ExampleFragment: Fragment(), ExampleView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initComponent()
-        presenter.attachView(this)
+//        presenter.attachView(this)
+        updateText.onNext(Unit)
     }
 
-    override fun initComponent() {
-
-    }
+    override fun initComponent() = Unit
 
     override fun onDestroy() {
-        presenter.detachView()
+//        presenter.detachView()
         super.onDestroy()
     }
 
