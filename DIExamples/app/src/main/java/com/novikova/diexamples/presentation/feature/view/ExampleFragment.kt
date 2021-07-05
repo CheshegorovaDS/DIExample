@@ -14,7 +14,7 @@ import org.koin.android.ext.android.inject
 class ExampleFragment: Fragment(), ExampleView {
     private val resLayout = R.layout.fragment_example
 
-    val presenter: ExamplePresenter by inject()
+    private val presenter: ExamplePresenter by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater,
