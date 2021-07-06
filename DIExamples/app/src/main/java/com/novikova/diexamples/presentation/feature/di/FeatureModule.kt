@@ -7,5 +7,5 @@ import org.koin.dsl.module
 
 val featureModule = module {
     factory { ExamplePresenter(get()) }
-    factory<IExampleReducer> { ExampleReducer() }
+    factory<IExampleReducer> { ExampleReducer(get()) }
 }
