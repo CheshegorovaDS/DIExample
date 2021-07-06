@@ -7,12 +7,12 @@ import com.novikova.diexamples.store.LoggedProvider
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
-    private fun provideSharedPreferences(context: Context): SharedPreferences =
-            context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-
     val appModule = module {
-        single<LoggedProvider> { LoggedManager(provideSharedPreferences(androidContext())) }
+        single<LoggedProvider> { LoggedManager(get()) }
+
+        single<SharedPreferences> {
+            return@single androidContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        }
     }
 
     const val PREFS_NAME = "preferences_name"
-
